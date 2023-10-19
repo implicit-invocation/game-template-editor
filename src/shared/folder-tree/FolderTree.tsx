@@ -123,7 +123,11 @@ export const FolderDisplay = ({
                       );
                     });
                   }
-                } else if (picking && isSibling(selectedPaths[0], childPath)) {
+                } else if (
+                  picking &&
+                  (selectedPaths.length === 0 ||
+                    isSibling(selectedPaths[0], childPath))
+                ) {
                   if (isPathsPointingToItem(child.name, path, selectedPaths)) {
                     setSelectedPaths((selected) =>
                       selected.filter(
